@@ -1,0 +1,27 @@
+2R Refeições — projeto atualizado
+
+Abra index.html ou publique os arquivos desta pasta na hospedagem existente.
+
+Atualização entregue:
+- Salvar backup e Atualizar dados no cabeçalho, com o visual existente.
+- Importação JSON com validação completa, confirmação e mensagens de resultado.
+- Substituição em uma única gravação: falha ao gravar mantém os dados anteriores.
+- Compatibilidade com o backup fornecido (month/projects/events), com dados antigos no formato mes/ano/dias/rows e com backups gerados por esta versão.
+- Setembro/2026: 28 obras, 580 lançamentos, 27.680 refeições, conferidos com o arquivo enviado.
+- Contatos e demais metadados do arquivo original preservados em sourceBackup. Essa propriedade é uma cópia de referência do arquivo recebido; os dados operacionais atualizados ficam em rows.
+- Período e número de dias acompanham os dados importados.
+
+Uso:
+1. Salvar backup baixa os dados atuais em JSON.
+2. Atualizar dados permite escolher um JSON compatível e mostra o período e a quantidade de obras antes de confirmar a substituição.
+3. Cancelar ou selecionar um arquivo inválido mantém os dados atuais.
+4. Restaurar original retorna ao backup de setembro incluído nesta entrega, após confirmação.
+
+Armazenamento:
+Os dados são locais a cada navegador. Esta versão usa a chave 2r_web_dados_setembro_2026 para iniciar com o backup solicitado, sem apagar a chave antiga de julho. Alterações futuras são mantidas entre recargas. A restauração não atualiza outros computadores automaticamente.
+
+Escopo:
+O ZIP original contém apenas index.html, style.css, app.js e data.js; não contém autenticação nem a função Salvar backup. Os dois botões foram acrescentados ao cabeçalho dessa versão. A publicação no domínio 2rrefeicoes.com.br não foi realizada.
+
+Verificação:
+Testes automatizados de conversão de todos os lançamentos, preços, quatro telas com DOM simulado, exportação/reimportação, cancelamento, JSON inválido, dados incompatíveis, duplicidades, falha de armazenamento e tratamento seguro de texto importado passaram. Não foi realizada verificação visual em navegador real.

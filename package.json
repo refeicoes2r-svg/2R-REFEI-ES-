@@ -1,0 +1,12 @@
+{
+  "name": "r2-controle-refeicoes",
+  "private": true,
+  "type": "module",
+  "engines": { "node": ">=20" },
+  "dependencies": {
+    "@upstash/redis": "^1.35.3",
+    "@vercel/functions": "^3.9.9",
+    "pdfkit": "^0.17.2",
+    "resend": "^6.0.2"
+  }
+}

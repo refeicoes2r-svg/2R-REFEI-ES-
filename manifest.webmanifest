@@ -1,0 +1,11 @@
+{
+  "name": "R2 Refeições",
+  "short_name": "R2 Refeições",
+  "description": "Site da R2 Refeições e controle de lançamentos por obra.",
+  "lang": "pt-BR",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#151713",
+  "theme_color": "#151713",
+  "icons": [{"src":"icone.svg","sizes":"any","type":"image/svg+xml","purpose":"any maskable"}]
+}

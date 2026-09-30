@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 64" role="img" aria-labelledby="title">
+  <title id="title">R2 Refeições</title>
+  <rect width="220" height="64" rx="11" fill="#163c35"/>
+  <text x="16" y="46" fill="#ffffff" font-family="Arial, sans-serif" font-size="39" font-weight="800" letter-spacing="-2">R2</text>
+  <path d="M83 13v38" stroke="#d6a04d" stroke-width="3"/>
+  <text x="98" y="38" fill="#ffffff" font-family="Arial, sans-serif" font-size="16" font-weight="700" letter-spacing="1.1">REFEIÇÕES</text>
+</svg>

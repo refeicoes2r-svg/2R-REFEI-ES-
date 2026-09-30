@@ -1,0 +1,38 @@
+INTEGRACAO DE ENVIO DE RELATORIO EM PDF
+
+Esta pasta esta pronta para publicar na Vercel e enviar e-mails pela Resend.
+O PDF e criado no servidor, anexado a mensagem e enviado ao e-mail cadastrado
+na obra selecionada. A chave da Resend fica nas variaveis da hospedagem; nao
+coloque chaves ou senhas no index.html.
+
+O que precisa para ativar
+1. Criar/usar uma conta Vercel e publicar esta pasta como projeto.
+2. Criar/usar uma conta Resend e verificar um dominio remetente que voce controla.
+3. Na Vercel, abrir Settings > Environment Variables e cadastrar:
+   RESEND_API_KEY   = chave secreta criada na Resend (com permissao de envio)
+   EMAIL_FROM       = R2 Refeicoes <relatorios@SEU-DOMINIO-VERIFICADO>
+   EMAIL_SEND_PIN   = codigo privado e longo, diferente da chave Resend
+4. Fazer novo deploy depois de salvar as variaveis.
+5. Abrir o endereco HTTPS da Vercel no celular. No relatorio, selecione uma
+   unica obra e um periodo; toque em "Enviar PDF por e-mail" e informe o PIN.
+
+O remetente precisa usar o dominio que a Resend verificou. O destinatario e o
+e-mail cadastrado na obra. O sistema envia o PDF detalhado com o logo R2 e o
+total geral no final, sem subtotais diarios.
+
+Seguranca e funcionamento
+- Nunca compartilhe a chave RESEND_API_KEY. Ela deve existir somente na Vercel.
+- O PIN sera solicitado a cada envio e validado pelo servidor.
+- A funcao recusa chamadas de outros sites e limita envios por endereco IP na
+  instancia ativa. Esse limite e uma protecao basica; para uso publico amplo,
+  configure rate limit compartilhado e autentique os usuarios.
+- O envio requer internet e o site hospedado em HTTPS. Abrir index.html local
+  nao habilita a API de envio.
+- Os lancamentos ainda ficam no armazenamento do navegador/dispositivo. Esta
+  integracao adiciona envio de e-mail; nao sincroniza dados entre aparelhos.
+
+Desenvolvimento local (opcional)
+- Instale Node.js 20 ou mais recente.
+- No terminal nesta pasta, rode: npm install
+- Configure as tres variaveis em .env.local e use: npx vercel dev
+- Nao envie .env.local para repositorios ou mensagens.

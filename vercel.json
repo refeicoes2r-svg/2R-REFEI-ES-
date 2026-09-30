@@ -1,0 +1,10 @@
+{
+  "proxy": {
+    "entrypoint": "proxy.js"
+  },
+  "functions": {
+    "api/*.mjs": {
+      "maxDuration": 30
+    }
+  }
+}

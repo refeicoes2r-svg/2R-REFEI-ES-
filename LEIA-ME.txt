@@ -1,0 +1,37 @@
+R2 REFEIÇÕES — SITE E CONTROLE DE LANÇAMENTOS
+
+O que está incluído
+- Página inicial responsiva com a imagem de apresentação enviada e o logo R2.
+- Botão Entrar com formulário de e-mail e senha.
+- Acesso de usuário único validado no servidor; o painel e os dados iniciais exigem sessão autenticada.
+- Painel de lançamentos, cadastro/gerenciamento de obras e relatórios em PDF.
+- Envio de relatórios PDF por e-mail, após configurar a Resend.
+
+Arquivos principais
+- index.html: página pública de apresentação e login.
+- painel.html: painel privado de lançamentos.
+- imagem-2r.jpg e logo-r2.png: imagens usadas no site e relatórios.
+- api/: autenticação, sessão e envio de relatórios.
+- INTEGRACAO-EMAIL.txt: configuração do remetente de e-mail.
+
+Publicação e login
+O login exige publicação em um servidor HTTPS compatível com Vercel. Abrir index.html como arquivo local (file:///) não permite autenticar, pois não há servidor para validar a sessão. Se o login estiver falhando no endereço publicado, confira as variáveis de ambiente e faça um novo deploy.
+
+Cadastre na Vercel, em Settings > Environment Variables:
+- APP_LOGIN_EMAIL: o e-mail único de acesso fornecido para este sistema.
+- APP_LOGIN_PASSWORD: a senha de acesso fornecida para este sistema.
+- AUTH_SESSION_SECRET: um valor aleatório secreto com pelo menos 32 caracteres.
+- UPSTASH_REDIS_REST_URL e UPSTASH_REDIS_REST_TOKEN: armazenamento protegido da senha alterada pelo painel. Na Vercel, conecte um banco Upstash Redis pelo Marketplace; a integração configura essas variáveis no projeto.
+- RESEND_API_KEY, EMAIL_FROM e EMAIL_SEND_PIN: necessários para enviar relatórios PDF por e-mail; veja INTEGRACAO-EMAIL.txt.
+
+Não coloque a senha nem AUTH_SESSION_SECRET no HTML, JavaScript, Git ou mensagens. Depois de criar/alterar variáveis, publique um novo deploy. No painel, use “Alterar senha” para definir uma nova senha (mínimo de 8 caracteres) e “Sair” para encerrar a sessão. A sessão expira após oito horas.
+
+Como publicar
+1. Publique esta pasta como um projeto Vercel.
+2. Configure as variáveis de login, conecte o Upstash Redis para habilitar a troca de senha e, se for usar e-mail, configure a Resend.
+3. Faça o deploy e abra o endereço HTTPS em celular ou computador.
+4. Faça login e, no celular, adicione o site à tela inicial pelo menu do navegador.
+
+Armazenamento
+Os lançamentos permanecem no armazenamento local do navegador. O login controla o acesso ao site publicado, mas não sincroniza os dados entre dispositivos. Use a seção de backup do painel para transferir os dados.
+O arquivo original da planilha não foi alterado.
